@@ -1,6 +1,7 @@
 /var/log/syslog
 {
 	rotate 7
+	maxsize 500m
 	daily
 	missingok
 	notifempty
@@ -11,21 +12,16 @@
 	endscript
 }
 
-/var/log/mail.info
-/var/log/mail.warn
-/var/log/mail.err
-/var/log/mail.log
-/var/log/daemon.log
-/var/log/kern.log
-/var/log/auth.log
-/var/log/user.log
-/var/log/lpr.log
-/var/log/cron.log
+/var/log/*.log
+/var/log/*.info
+/var/log/*.warn
+/var/log/*.err
 /var/log/debug
 /var/log/messages
 {
 	rotate 4
 	weekly
+	maxsize 50m
 	missingok
 	notifempty
 	compress
